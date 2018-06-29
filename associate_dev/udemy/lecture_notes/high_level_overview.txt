@@ -91,5 +91,5 @@ Services we care about:
 
   Developer Tools
     * These do not appear on the exam
-
-  
+      - At least they didn't at the time.
+      - I will further research if this is still the case
