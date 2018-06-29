@@ -1,0 +1,95 @@
+6/29/18
+
+Associate Developer AWS Certification Training
+
+Basics
+  Region
+    - Contains 2 or more availability zones
+  Availability Zone
+    - A Datacenter
+    - Redundant power, networking
+  Edge Location
+    - Locations used for caching to reduce latency
+
+Services we care about:
+  Compute
+    EC2
+      - Elastic compute cloud
+      - VMs in AWS platform
+    Elastic Beanstalk
+      - For devs who don't understand AWS
+      - Provisions most all infrastructure for you
+      - Devs only need to focus on their code
+      - Meant to run applications
+    Lambda
+      - You don't worry/care about underlying machines
+      - Nothing to manage
+      - Meant to run code
+      - Different from Beanstalk: https://acloud.guru/forums/aws-certified-solutions-architect-associate/discussion/-KTTxk7jZJWOGDZINHfd/what-is-an-difference-between-lambda-elastic-beanstack
+    Lightsail
+      - Watered down EC2
+      - You get a server and ssh access
+      - You don't manage security groups or anything
+
+  Storage
+    S3
+      - Simple storage service
+      - Object based storage
+      - Upload files into buckets
+    EFS
+      - Elastic file system
+      - Store files on EFS volumes and mount to multiple machines
+    Glacier
+      - Used for data archival
+    Snowball
+      - Physical device you add data to and send to AWS to be uploaded
+    Storage gateway
+      - 4 Virtual appliances you install in your datacenter or office
+      - Replicate information back to S3
+
+  Databases
+    RDS
+      - Relational Database Services
+      - Compatible with a lot of different existing DBMS
+    DynamoDB
+      - Non-relational database
+    Elasticache
+      - Caching service
+    Redshift
+      - Used for complex queries
+      - Data warehousing service
+
+  Migration
+    AWS Migration Hub
+      - Tracking service
+      - Allows you to track your applications as you migrate them to AWS
+    Application Discovery Service
+      - Automate set of tools
+      - Used for service discovery
+      - Tracks dependencies
+    Database Migration Service
+      - Easy way to migrate your databases from on-premise to AWS
+    Server Migration Service
+      - Helps you migrate your virtual and physical servers on to AWS
+
+  Networking And Content Delivery
+    VPC
+      - Virtual Private Cloud
+      - Virtual datacenter
+      - You configure firewalls, AZ's, Network ACLs, root tables
+    Cloudfront
+      - Amazon's CDN (Content delivery network)
+      - Used to distribute content
+      - Store data closer to user
+    Route53
+      - AWS DNS Service
+      - Resolves hostname to ip address
+    API Gateway
+      - Create your own api for other services to talk to
+    Direct Connect
+      - Way of running a dedicated line from your office directly to AWS
+
+  Developer Tools
+    * These do not appear on the exam
+
+  
