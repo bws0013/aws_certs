@@ -1,5 +1,3 @@
-6/29/18
-
 Associate Developer AWS Certification Training
 
 Basics
@@ -93,3 +91,90 @@ Services we care about:
     * These do not appear on the exam
       - At least they didn't at the time.
       - I will further research if this is still the case
+
+  Management Tools
+    CloudWatch
+      - Covered a lot in Sysops Admin Exam Study Guide
+    CloudFormation
+      - Way of scripting infrastructure
+      - Infrastructure as code
+    CloudTrail
+      - Logs every action
+      - Logs changes to AWS environment
+      - Turned on by default but only set to a week
+    Config
+      - Monitors the configuration of your entire AWS environment
+      - Has snapshots so that you can visualize your infrastructure over time
+    OpsWorks
+      - Uses chef and puppet to automate your environment
+    Service Catalog
+      - Manages your services approved for use on AWS
+      - Can be software, databases all the way to architecture
+      - Used for governance/compliance requirements
+      - *Not in exams as of yet
+    Systems Manager
+      - Interface for managing AWS resources
+      - Typically used for EC2
+      - Can be used for patch maintenance
+      - Can group all of your resources
+      - *Not in exams yet
+    Trusted Advisor
+      - Gives advice around different disciplines
+      - Tells you if your are fully utilizing your AWS services
+      - Gives advice on AWS environment
+    Managed Services
+      - Will manage your auto-scaling for you
+      - Will manage EC2 instances for you
+
+  Media Services
+    Elastic Transcoder
+      - Can resize videos to work on multiple devices
+
+  Machine Learning
+    *Not in exams
+    SageMaker
+      - Makes deep learning easier
+    Comprehend
+      - Sentiment analysis around data
+    DeepLens
+      - Artificially aware camera
+      - Can figure out what its looking at
+    Lex
+      - Powers amazon alexa
+    Machine Learning
+      - Analyzes data sets
+    Poly
+      - Text to speech
+    Rekognition
+      - Upload file and it will tell you whats in the picture
+      - Tells you what it recognize
+    Amazon Translate
+      - Translates
+    Amazon Transcribe
+      - Allows for automatic speech transcription
+
+  Analytics
+    Athena
+      - Allows you to run SQL queries against items in S3 buckets
+      - *Not in exams
+    EMR
+      - Used to process large amounts of data
+      - Chops data up for analysis
+    CloudSearch
+      - Search Service
+    ElasticSearch service
+      - Search service
+    Kinesis
+      - Used to ingest large amounts of data into AWS
+      - Think tweets or data feeds
+    Kinesis Video Streams
+      - Ingest video watch data
+    QuickSight
+      - Amazon's Business Intelligence tool
+      - *Not in exams yet
+    Data Pipeline
+      - Used to move data between different AWS services
+    Glue
+      - Used for ETL (Extract, Transform, Load)
+
+  
