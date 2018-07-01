@@ -9,7 +9,17 @@ Basics
   Edge Location
     - Locations used for caching to reduce latency
 
-Services we care about:
+Particular Services we care about from below list
+  Analytics
+  Management Tools
+  Compute
+  Application Integration
+  Security, Identity and Compliance
+  Networking and Content Delivery
+  Storage
+  Databases
+
+Service List:
   Compute
     EC2
       - Elastic compute cloud
@@ -131,7 +141,7 @@ Services we care about:
       - Can resize videos to work on multiple devices
 
   Machine Learning
-    *Not in exams
+    *Not yet in exams
     SageMaker
       - Makes deep learning easier
     Comprehend
@@ -158,6 +168,7 @@ Services we care about:
       - Allows you to run SQL queries against items in S3 buckets
       - *Not in exams
     EMR
+      - Elastic Map Reduce
       - Used to process large amounts of data
       - Chops data up for analysis
     CloudSearch
@@ -171,10 +182,110 @@ Services we care about:
       - Ingest video watch data
     QuickSight
       - Amazon's Business Intelligence tool
-      - *Not in exams yet
+      - *Not yet in exams
     Data Pipeline
       - Used to move data between different AWS services
     Glue
       - Used for ETL (Extract, Transform, Load)
 
-  
+  Security, Identity and Compliance
+    IAM
+      - Identity and Access Management
+    Cognito
+      - Device authentication
+      - Gives temporary access to AWS for mobile devices
+    GuardDuty
+      - Monitors for malicious activity on your AWS account
+      - *Not yet in exams
+    Inspector
+      - Agent you install on your VMs or EC2 instances
+      - You can run tests against it
+      - Does my EC2 instance have any security vulnerabilities
+      - Can be scheduled to run regularly and generate severity list report
+    Macie
+      - Will scan S3 buckets and look for PII
+    Certificate Manager
+      - Way of managing SSL certificates
+    CloudHSM
+      - Hardware Security Module
+      - Used to store keys
+    Directory Service
+      - Used to integrate microsoft active directory services with AWS services
+      - *Not yet in exams
+    WAF
+      - Web Application Firewall
+      - Layer 7 firewall (Application level)
+      - Stops XSS, SQL injections
+    Shield
+      - DDOS Mitigation
+    Artifact
+      - Used to download AWS compliance reports
+      - Manage agreements, pci reports, etc
+
+  Mobile Services
+    *Not yet in exams
+    Mobile Hub
+      - Management console or mobile
+    Pinpoint
+      - Push notifications
+    AppSync
+      - Automatically updates data in realtime
+    DeviceFarm
+      - Used to test apps on real devices
+    Mobile Analytics
+
+  AR/VR
+    *Not yet in exams
+
+  Application Integration
+    Step Function
+      - Used to manage Lamba Functions
+    Amazon MQ
+      - *Not yet in exams
+      - Amazon's message queue
+    SNS
+      - Notification Service
+      - ex billing alarm
+    SQS
+      - Decoupling infrastructure
+      - Holds info in queue until an EC2 instance is ready to use it
+    SWF
+      - Simple Workflow Service
+      - Workflow that can contain human beings
+
+  Customer Engagement
+    Connect
+      - Contact center as a service
+      - Call center in the cloud
+      - *Not yet in exam
+    Simple Email Service
+      - Scalable bulk email service
+
+  Business Productivity
+    Alexa For Business
+      - Alexa services for business purposes
+      - *Not yet in exams
+    Chime
+      - Amazon variant for Google hangouts or Zoom
+      - *Not yet in exams
+    Work Docs
+      - Dropbox for AWS
+    WorkMail
+      - Amazon's office365
+      - *Not yet in exams
+
+  Desktop And App Streaming
+    *Not yet in exams
+    Workspaces
+      - VDI solution
+      - Where you run an OS in Amazon cloud
+      - System runs in the cloud and streams to your device
+    AppStream 2.0
+      - Way of streaming applications
+      - App runs in the cloud and streams to your device
+
+  Internet of things
+    *Not yet in exams
+
+  Game Developement
+    *Not yet in exams
