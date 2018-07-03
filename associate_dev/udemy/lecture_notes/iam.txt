@@ -1,0 +1,37 @@
+IAM (Identity Access Management)
+
+Allows you to manage users and their level of access to the AWS console
+
+Functions
+  Centralized control of your AWS account
+  Shared access to your AWS account
+  Granular permissions
+  Identity federation
+    - You can connect you IAM to {Active Directory, LinkedIn, Facebook}
+  Multi-factor authentication
+  Provide temporary access for users/devices and services where necessary
+  Allows you to set up your own password rotation policy
+  Integrates with many different AWS services
+  Supports PCI DSS compliance
+
+Terms
+  Users
+    - End Users (people)
+  Groups
+    - A collection of users under a single set of permissions
+    - Think finance, or sys admins
+  Roles
+    - You create roles and can then assign them to AWS resources
+  Policies
+    - A document that defines one or more permissions
+
+IAM region
+  IAM is global it does not have a particular region
+  Created Users/Groups/Roles are available all across the world
+  *This can show up on the exam
+
+IAM Access types
+  Programmatic access
+    - Enables an access key ID and secret access key for the AWS API, CLI, SDK, and other development tools.
+  AWS Management Console access
+    - Enables a password that allows users to sign-in to the AWS Management Console.
