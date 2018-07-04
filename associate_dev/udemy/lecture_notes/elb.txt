@@ -3,6 +3,17 @@ ELB (Elastic Load Balancer)
 Allows you to balance traffic (a load) across servers
   No one server will get overwhelmed
 
+ELB exam tips
+  3 types of LBs in AWS
+    - Application Load Balancer
+    - Network Load Balancer
+    - Classic Load Balancer
+  504 Error means the gateway has timed out.
+    - This means the application is not responding within the timeout period
+    - Troubleshooting should start with the app
+  X-forwarded-for header
+    - Look here for the public ip of your end user 
+
 3 types of LBs in AWS
   Application Load Balancer
     - Layer 7
@@ -17,4 +28,9 @@ Allows you to balance traffic (a load) across servers
   Classic Load Balancer
     - Not recommended anymore
     - Here for legacy purposes
-    - The exam is mostly on these (at time of video)
+    - The exam, however, is mostly on these (at time of video)
+    - You can use layer 7 or 4 load balancing
+    - If your app stops working you would get a 504 error
+      - It means the LB is fine but something below the LB is
+    - X-forwarded-for header
+      - Header that contains public ip
