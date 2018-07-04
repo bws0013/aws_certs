@@ -1,0 +1,71 @@
+EC2 (Elastic Computing Cloud)
+
+Web service that provides resizable compute capacity in the cloud
+
+EC2 exam tips
+  On demand instance
+  Reserved instance
+  Spot
+  Dedicated hosts
+  Note on spot instances
+    - If a spot instance is terminated by AWS EC2, you will not be charged for a partial hour of use
+    - If you terminate the instance yourself you will be charged for the complete hour the instance ran
+    - This is a popular exam questions
+  general purpose ssd
+  provisioned IOPS ssd
+  throughput optimized HDD
+  cold HDD
+  magnetic
+
+Two types of instances
+  On demand instance
+    - allowing payment by the hour or second with no commitment
+    - good for testing or unpredictable work loads
+  Reserved instance
+    - provides a capacity reservation
+    - significant discount on paying hourly
+    - 1 or 3 year terms
+    - good for steady state or predictable usage
+  Spot
+    - bid whatever you want for instance capacity
+    - provides big saving if your apps have flexible start/end times
+    - spot prices moves around all the time
+    - good for flexible start/end times
+    - good for apps that are only feasible at very low compute prices
+  Dedicated hosts
+    - physical EC2 server dedicated to your use
+    - can allow you to save money by allowing you to use existing server bound software licenses
+    - good for regulatory requirements that may not support multi-tenant virtualization
+    - can be purchased on-demand (hourly)
+
+EBS
+  Elastic Block Storage
+  Allows you to create storage volumes and attach them EC2 instances
+    - once attached you can run a file system/db/etc
+  Placed in a specific AZ
+    - auto replicated
+  Volume types
+    - general purpose ssd (GP2)
+      - balances price and performance
+      - use if you need at most 10000 IOPS (input/output per second)
+      - can be boot volume
+    - provisioned IOPS ssd (IO1)
+      - designed for IO intensive applications such as large (no)sql databases
+      - use if you need more than 10000 IOPS
+      - can be boot volume
+    - throughput optimized HDD (ST1)
+      - big data
+      - data warehousing
+      - log processing
+      - this cannot be a boot volume, they need to be additional volumes
+    - cold HDD (SC1)
+      - lowest cost
+      - meant for infrequently accessed workloads
+      - cannot be a boot volume
+      - eg file server
+    - magnetic (standard)
+      - can be boot volume
+      - lowest cost per gb of all ebs volumes that is bootable
+      - ideal for workloads where data is accessed infrequently
+      - ideal for applications where lowest storage cost is important
+      - this is legacy

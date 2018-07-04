@@ -1,0 +1,20 @@
+ELB (Elastic Load Balancer)
+
+Allows you to balance traffic (a load) across servers
+  No one server will get overwhelmed
+
+3 types of LBs in AWS
+  Application Load Balancer
+    - Layer 7
+    - Best suited for HTTP/S
+    - Send specified requests to specific web servers
+    - Can make decisions based on url (eg aws.amazon.com packets would go to AWS)
+  Network Load Balancer
+    - Best suited for Layer 4 (TCP traffic)
+    - Super fast performance/speed (millions of transactions/second)
+    - Use in production if latency is an issue
+    - Most expensive
+  Classic Load Balancer
+    - Not recommended anymore
+    - Here for legacy purposes
+    - The exam is mostly on these (at time of video)
