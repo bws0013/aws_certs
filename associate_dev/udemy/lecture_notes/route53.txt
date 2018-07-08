@@ -1,0 +1,8 @@
+Route53
+
+Route53 is the AWS DNS service
+
+Allows you to map your domains to
+  EC2 Instances
+  Load Balancers
+  S3 Buckets
