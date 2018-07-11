@@ -1,0 +1,19 @@
+CLI
+
+Enables the running of terminal commands to perform GUI actions
+
+Exam tips
+  Least Privilege
+    - Always give your users the the minimum amount of access required
+  Create Groups
+    - Assign your users to groups
+    - Your users will automatically inherit the permissions of the Groups
+    - The groups permissions are assigned using the policy documents
+  Secret Access Keys
+    - You will only see this once
+    - If you do not save you can delete and regenerate the key pair
+    - You will need to run AWS configure again
+  Do not use just one access key
+    - Create keys on a per developer basis
+    - It makes revoking access easier
+    

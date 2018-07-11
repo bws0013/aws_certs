@@ -1,0 +1,18 @@
+EC2 With S3 Roles
+
+Roles allow for assigning permissions to a role (like a tag) and then giving that role to a particular user
+  - The user inherits the permissions as provided by the role
+
+Remove credentials if they remain on the system
+  - Located in root user: ~/.aws
+    - Delete credentials/ and config/
+
+Exam tips
+  - Roles allow you to not use Access Key IDs and Secret Access Keys
+  - Roles are preferable from a security perspective
+  - Roles are controlled by policies
+  - You can change a policy on a role and it will immediately go into affect
+  - You can attach/detach roles without restarting/stopping EC2 instances
+  - Roles can be viewed as JSON representing permissions
+
+  
