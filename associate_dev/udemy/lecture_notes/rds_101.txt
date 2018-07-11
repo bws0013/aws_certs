@@ -1,0 +1,45 @@
+RDS
+
+Relational Database Service
+
+Exam Tips
+  - RDS is OLTP
+  - DynamoDB is noSQL
+  - Redshift is OLAP, business intelligence and big data processing
+  - ElastiCache is in memory caching 
+
+6 DB types through AWS that can be provisioned
+  - SQL Server
+  - Oracle
+  - MySQL Server
+  - PostgreSQL
+  - Aurora
+  - MariaDB
+
+Aurora is Amazon's own flagship db technology
+  - Allows for migrating from MySQL to Aurora
+
+Non Relational Database Elements
+  - Collection = Table
+  - Document = Row
+  - Key Value Pairs = Fields
+
+Data Warehousing
+  - Used for business intelligence
+  - Think Cognos, Jaspersoft, SQL Server
+  - Used to pull in very large and complex data sets
+  - Usually used to do queries on data such as current performance vs targets, etc
+  - Prod database may push data to a data warehouse where it is later analyzed
+
+OLTP vs OLAP
+  - Online Transition Processing (OLTP)
+  - Online Analytics Processing (OLAP)
+  - The 2 differ in terms of the types of queries run on each
+  - OLAP can be a lot more complex
+
+ElastiCache
+  - Web Service for easily deploying, operating and scaling an in memory cache in the cloud
+  - Improves performance of web apps by allowing you to retrieve information from memory caches instead of disk based DBs
+  - Supports 2 open-source in memory caching engines
+    - Memchached
+    - Redis
