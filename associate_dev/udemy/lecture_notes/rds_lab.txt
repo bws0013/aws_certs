@@ -1,0 +1,8 @@
+RDS Lab
+
+You may encounter security group issues when connecting databases to ec2 instances
+  To solve just edit inbound rules, select mysql and whitelist our security group(s)
+
+Adding the security group should allow instantaneous access
+
+Having an ec2 instance in 1 security group and an rds instance in another group is a common exam question
