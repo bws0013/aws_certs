@@ -1,0 +1,115 @@
+EC2 Exam tips
+
+Pricing models
+  - On demand
+    - You pay a fixed rate by the hour/second with no commitment
+  - Reserved
+    - A capacity reservation with 1 to 3 year contacts, the longer term the better rate
+  - Spot
+    - You bid whatever price you want for an instance capacity
+    - Good for flexible start/end times
+    - If AWS terminates your instance you wont be charged for that hour
+  - Dedicated hosts
+    - Physical EC2 server dedicated for your use
+    - Typically for licenses or regulatory requirements
+
+All different instance type mnemonic
+  - FIGHT DR MC PX
+
+EBS Volumes
+  - SSD
+    - General Purpose SSD
+      - Balances price/performance for a variety of workloads
+      - Under 10000 iops
+    - Provisioned IOPS SSD
+      - Highest-performance SSD volume for mission-critical low-latency or high-throughput workloads
+      - Over 10000 iops
+  - Magnetic
+    - Throughput optimized HDD
+      - Low cost HDD volume for frequently accessed, throughput-intensive workloads
+    - Cold HDD
+      - Lowest cost HDD volume designed for less frequently accessed workloads
+    - Magnetic
+      - Previous generation and can be boot volume
+
+3 Types of load balances
+  - Application LB
+  - Network LB
+  - Classic (Elastic) LB
+
+LB characteristics
+  - 504 error means the gateway has timed out meaning the application is not responding within the idle timeout period
+    - It is likely the web server or the DB server
+  - If you need the IPv4 address of your end user, look for the X-Forwarded-For header
+
+Route53
+  - Amazon's DNS service
+  - Allows you to map your domain names to
+    - EC2 instances
+    - LBs
+    - S3 buckets
+
+CLI Tips
+  - Least privilege
+    - Always give users the minimum access required
+  - Create groups with group permissions
+  - Secret access key you will only see once
+  - Do not use just one access key, one per dev
+  - You can use the CLI on your PC
+
+Roles
+  - Roles allow you to not use Access key ID's and Secret access keys
+  - Roles are preferred from a security perspective
+  - Roles are controlled by policies
+  - You can change a policy on a role and it will take immediate affect
+  - You can attach/detach roles to running ec2 instances without stopping these instances
+
+Encryption of root device volumes
+  - You can encrypt the root device volume (the volume the OS is installed on) using Operating system level encryption
+  - You first take a snapshot of the volume then create a copy with encryption
+  - You can encrypt additional attached volumes using the console, CLI or API
+
+Databases
+  - RDS
+    - SQL
+    - MySql
+    - PostgreSQL
+    - Oracle
+    - Aurora
+    - MariaDB
+  - DynamoDB
+    - NoSQL
+  - Redshift
+  - Elasticache
+    - Memcached
+    - Redis
+
+Multi-AZ and read replicas
+  - For disaster recovery only
+  - For performance use read replicas
+    - Used for scaling
+    - Must have automatic backups turned on
+    - You can have up to 5 read replica copies of any DB
+    - You can have read replicas of read replicas (watch out for latency)
+    - Each read replica will have its own DNS endpoint
+    - You can have read replicas that have multi-AZ
+    - You can create read replicas of Multi-AZ source databases
+    - Read replicas can be promoted to be their own DBs which breaks replication
+    - You can have a read replica in a different region for mySQL and mariaDB
+
+DB related
+  Elasticache
+    - Good for read heavy DBs not prone to frequent changes
+  Redshift
+    - Good for large numbers of transactions
+
+Use memcached if
+  - Object caching is your primary goal
+  - You want to keep things simple
+  - You want to scale your cache horizontally
+Use Redis if
+  - You have advanced data types such as lists, hashes or sets
+  - You are doing data sorting or ranking
+  - Data persistence
+  - Multi AZ
+  - Pub/Sub capabilities are needed 

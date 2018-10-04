@@ -1,0 +1,41 @@
+ElastiCache
+
+
+Service allowing for easily making a scalable in-memory cache in the cloud
+
+Features
+  - Improves web app performance by not having to rely on slow disk based reads
+  - Takes a lot of load of prod dbs
+  - Use on those queries that are very frequently run
+  - Improves latency by storing in-memory
+
+Types of elasticache
+  - Memchached
+  - Redis
+
+Memchached
+  - A widely adopted memory object caching system
+  - Elasticache is protocol compliant with Memchached so tools build for Memchached can be used with elasticache
+  - Pure caching solution with no persistence
+    - Individual nodes are expendable
+
+Redis
+  - Open-source in-memory key-value store used when needing to support data structures such as sorted sets and lists
+  - Supports master/slave replication and multi-az to achieve cross az redundancy
+  - Managed as stateful entities that include failover similar to how RDS manages DB failover
+
+Both Memchached and Redis are in-memory key stores
+
+Memchached - Use cases
+  - If object caching is primary goal
+  - Simplicity
+  - Multithreaded performance and multi-core
+  - Horizontal scalability
+
+Redis - Use cases
+  - Advanced data types such as hashes and sets
+  - Need to sort/rank (leaderboard)
+  - Persistence of key store important
+  - Need multi-az with failover
+
+**See bookmark on section 3 lecture 19 for scenario info**
