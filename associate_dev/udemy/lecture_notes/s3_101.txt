@@ -1,0 +1,120 @@
+S3 101
+
+Simple Storage Service
+
+Provides devs with secure highly-scalable object storage
+  - Files
+  - Images
+  - Webpages
+  - Not for ISOs or DBs
+
+Object based storage only, no block storage
+
+Data is spread across multiple devices and facilities
+
+Files can be from 0 Bytes to 5 TB in size
+
+There is unlimited storage
+
+Files are stored in buckets (similar to folder)
+  - User defined
+
+S3 has a universal namespace
+  - Similar to dns address
+  - No two buckets can have the same name even in different regions
+
+You receive an http 200 code if the upload was successful (API/CLI)
+
+Data consistency model
+  - Read after Write consistency for Puts of new objects
+    - As soon as you upload your file it is available to read
+  - Eventual Consistency for overwrite Puts and Deletes
+    - There is some propagation delay
+
+S3 is object based, objects consist of the following
+  - Key
+    - Name of the object
+  - Value
+    - The data (A sequence of bytes)
+  - Version ID (for versioning)
+  - Metadata
+    - You can add metadata such as team name or project name
+  - Sub-resources (bucket specific policies)
+    - Bucket policies, Access control lists
+  - Cross Origin Resource Sharing
+    - Instructions on how files in one bucket can access those in another
+  - Transfer Acceleration
+    - Allows you to accelerate file transfer speeds when uploading lots of files to s3
+
+99.99% availability for the s3 platform
+  - Amazon only guarantees 99.9% availability
+  - 11 9s of durability
+    - Durability being the amount of data not lost per year
+
+Tiered Storage available
+  - Cater to different requirements or types of data you may be storing
+Lifecycle management
+  - Manage your data's movement between different storage tiers
+Versioning
+Encryption
+Secure your data - Access
+  - Control Lists and Bucket Policies
+
+S3 storage tiers
+  - S3
+    - Data stored redundantly, designed for 2 data center outages concurrently
+  - S3 - IA (infrequently accessed)
+    - For data that is accessed less frequently but requires rapid access when needed
+    - Lower fee than S3 but you are charged a retrieval fee
+  - S3 - One Zone IA
+    - Same as IA but data is stored only in a single availability zone
+    - 99.5% availability
+    - 20% cheaper than S3 - IA
+  - Reduced Redundancy Storage
+    - 99.99% durability and availability over a given year
+    - Used for data that can be re-created if lost eg video/image thumbnails
+    - This is not a recommended storage class by Amazon
+  - Glacier
+    - Not strictly part of s3 but interacts with it heavily
+    - Very cheap but used for archival purposes only
+    - Optimized for data that is infrequently accessed
+    - Takes 3-5 hours to restore for glacier
+
+S3 charges
+  - Charged for
+    - Storage per GB
+    - Requests (Get, Put, Copy, etc)
+    - Storage Management Pricing
+      - Inventory, Analytics and object tags
+    - Data management pricing
+      - Data transferred out of S3
+         - Downloading a file costs money but upload is free
+    - Transfer Acceleration
+      - Use of CloudFront to optimize transfers
+
+Exam Tips:
+  S3 is object based
+  Files from 0 Bytes to 5TB
+  There is unlimited storage
+  Files are stored in buckets
+  S3 is a universal namespace
+  Data consistency model
+    - Read after Write consistency for Puts of new objects
+    - Eventual Consistency for overwrite Puts and Deletes
+  S3 storage tiers
+    - S3
+    - S3 - IA (infrequently accessed)
+    - S3 - One Zone IA
+    - Reduced Redundancy Storage
+    - Glacier
+  Core Object Fundementals
+  - Key
+  - Value
+  - Version ID
+  - Metadata
+  - Sub-resources
+    - Cross Origin Resource Sharing
+    - Transfer Acceleration
+  Successful uploads generate a 200 status code (cli/api)
+
+  Read this before the exam: https://aws.amazon.com/s3/faqs/
