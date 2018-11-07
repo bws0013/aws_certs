@@ -107,7 +107,7 @@ Exam Tips:
     - S3 - One Zone IA
     - Reduced Redundancy Storage
     - Glacier
-  Core Object Fundementals
+  Core Object Fundamentals
   - Key
   - Value
   - Version ID

@@ -1,0 +1,30 @@
+S3 Encryption
+
+In transit
+  - SSL/TLS
+    - Transport Layer Security (TLS) is replacing SSL
+
+At Rest
+  - Server Side Encryption
+    - S3 managed keys - SSE-S3
+    - Aws Key management service, managed keys, SSE-KMS
+
+Client Side encryption
+  - You encrypt files before uploading
+
+Enforcing Encryption on S3 buckets
+  - Every time a file is uploaded, a PUT request is made
+  - If the files is to be encrypted at upload time a request header is included
+    - parameter x-amz-server-side-encryption
+    - When the parameter is included in the PUT request it tells s3 to encrypt on upload with that encryption method
+  - Two options are available for upload encryption
+    - x-amz-server-side-encryption: AES256 (S3 managed keys)
+    - x-amz-server-side-encryption: KMS (KMS managed keys)
+  - You can enforce the use of encryption on the server side with a bucket policy
+    - Deny any s3 put requests that dont include the x-amz-server-side-encryption param in the request header
+
+Exam tips
+  - Encryption in transit
+  - Encryption at rest
+    - Server or client side
+  - You can enforce the encryption for files in s3 use an s3 bucket policy 
