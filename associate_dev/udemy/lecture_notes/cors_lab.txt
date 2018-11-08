@@ -1,0 +1,5 @@
+CORS Configuration
+
+Cross origin resource sharing
+  - Allows for code in one s3 bucket to access code in another s3 bucket
+  - (More generally) Allows one resource to communicate with another resource

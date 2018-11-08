@@ -1,0 +1,53 @@
+CloudFront
+
+Amazon's content delivery network
+
+CDN
+  - Content delivery network
+  - A network of distributed servers that delivery web pages and other web content
+    - Based on the geographic location of the user, the origin of the webpage and a content delivery server
+  - Speeds up delivery of web content
+
+Difference between cloudfront and transfer acceleration
+  - cloudfront is focused on delivery
+  - TA is focused on upload speed increases
+
+Edge location
+  - Data centers which are geographically dispersed
+  - If a user is requesting your content they will do so from the edge location
+    - If your user is in australia but the content is in the US it saves them the latency
+    - The edge location forwards the request to the main server
+    - The edge location then downloads the files and caches them locally
+  - Cached objects are cached for a time (time to live)
+    - After which time they are cleared
+    - You can clear the cache for a fee, say if you had a new version of your object
+
+CloudFront Distribution Types
+  - Web Distribution
+    - Used for websites, HTTP/HTTPS
+  - RTMP Distribution
+    - Media streaming / Flash multi-media content
+
+S3 Transfer Acceleration
+  - Enables fast transfers over long distances
+  - Takes advantage of CloudFront distributed edges
+
+Exam Tips:
+Edge location
+  - This is the location where content is cached and can be written
+    - Separate to an AWS Region/AZ
+  - Because you can clear the cache and replace objects you have WRITE (effectively)
+Origin
+  - This is the origin of all the files that the CDN will distributed
+  - Origins can be an S3 bucket, an EC2 instance, or Elastic load balancer or Route53
+Distribution
+  - This is the name, given the CDN, which consists of a collection of Edge locations
+  - 2 types
+  - Web Distribution
+    - Typically used for websites
+  - RTMP
+    - Used for media streaming
+S3 Transfer Acceleration
+  - Enables fast transfers over long distances
+  - Takes advantage of CloudFront distributed edges
+Requests for content are automatically routed to the closest edge node
