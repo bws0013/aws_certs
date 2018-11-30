@@ -1,0 +1,10 @@
+Building a cdn is referred to as a cloudfront distribution
+
+Cloudfront origin
+  - Where the original copies of your content are
+  - You can have multiple origins for your instance
+  - You can aslo have multiple ec2 instances/load balancers/etc
+  - Our origin will be an s3 bucket
+
+If there is a question on the exam about paid for content refer to restrict viewer access
+  - Set to Yes to disable free loaders 
