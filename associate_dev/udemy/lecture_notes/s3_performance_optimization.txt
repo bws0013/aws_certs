@@ -1,0 +1,27 @@
+S3 Performance Optimization
+
+S3 is designed to support very high request rates
+
+If your buckets are receiving lots of requests here are some best practices
+  - Get intensive workloads
+    - Use CloudFront for best performance
+    - Caches my frequently accessed objects
+  - Mixed request type workloads
+    - Object key names can impact performance for intensive workloads
+    - S3 uses the name to determine which partition the object should be stored in
+    - Sequential names (such as starting with timestamps) are more likely in the same partition
+    - For heavy workloads this can cause I/O issues and contention
+    - By using a random prefix to key-names you can force s3 to distribute keys across multiple partitions
+      - This distributes the I/O workload
+    - For optimal performance use random key prefixes
+
+Exam Tips
+  - 2 main approaches for optimization
+    - Get intensive
+      - Use cloudfront
+    - Mixed intensive
+      - Insert random prefixes for more evenly distributed hashing
+    * Just kidding, logical and sequential naming conventions now are available without performance impact
+      * Still know in case exam is old
+
+  
