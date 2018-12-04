@@ -1,0 +1,93 @@
+S3 summary
+
+Remember that s3 is object based
+0 bytes to 5tb
+Unlimited storage
+Files are stored in buckets
+  - Think folder
+S3 is a universal namespace with globally unique names
+
+Read after write consistency for puts of new objects
+Eventual consistency for Puts and Deletes and it can take some time to propagate
+
+S3 Storage classes/tiers
+  S3
+    - durable
+    - immediately available
+    - for frequent access
+  S3 - IA
+    - durable
+    - immediately available
+    - for less frequent accesses
+  S3 - One Zone IA
+    - same as IA except its only kept in 1 zone
+    - Doesn't have as many 9s as the others
+    - Costs 20 percent less
+  S3 - reduced redundancy
+    - Easily reproducible stuff only
+    - Used to be cost efficient but now regular s3 is recommended
+  Glacier
+    - Used for archiving
+    - Acceptable to wait 3-5 hours before having access
+
+S3 object core fundamentals
+  - Key (name)
+  - Value (data)
+  - Version ID
+  - Metadata
+  - Subresources (used to manage the bucket specific config)
+    - Bucket policies, ACLS
+    - CORS (Cross origin resource sharing (allow buckets to see each other))
+    - Transfer acceleration (speeds up object uploads up to s3)
+  - Object storage only
+  - Not suitable for OSs and DBs
+  - Successful uploads generate a 200 status codes
+
+Security
+  - By defaults all newly created buckets are private
+  - You can set up access control in your buckets using bucket policies
+    - Applied at a bucket level (the bucket and its contents)
+    - ACLs (access control lists) apply at an object level
+  - S3 buckets can be configured to create access logs
+    - Configured on the bucket
+    - Written to current or other bucket (you chose)
+  - Encryption is supported in-transit using SSL/TLS
+  - Encryption at rest
+    - Server side
+      - SSE-S3 (keys are managed from within s3, AWS manage this end to end)
+      - SS3-KMS (key management service, a bit more secure and an audit trail)
+      - SSE-C (customer provided key, you manage your own key, AWS manage encrypt/decrypt)
+    - Client side encryption
+    - We can use a bucket policy to prevent unencrypted files from being uploaded
+      - Create a policy which only allows files with the x-amz-server-side-encryption param in the request
+
+CORS (cross origin resource sharing)
+  - Used to enable cross origin access for your AWS resources
+  - By default the resources in a bucket cannot access the resources in another
+  - We need to enable cors on both the source and destination buckets
+  - Always use the s3 website URL not the regular bucket URL
+  - eg s3 hosted website accessing javascript or image file in another bucket
+
+CloudFront
+  - Edge location
+    - This is the location where the content will be cached
+    - Separate to an AWS region/AZ
+  - Origin
+    - Location of all the files that the CDN will distribute
+    - Origins can be an S3 bucket, an ec2 instance, an ELB or route53
+  - Distribution
+    - Name given to the cdn, which consists of a collection of edge locations
+    - Web distribution
+      - Used for websites
+      - RTMP (Adobe's Real Time Message protocol)
+  - Edge locations are not just read only - you can write to them to
+  - Objects are cached for the life of the TTL (time to live)
+    - Default is 24 hr
+    - You can cache manually but you will be charged
+
+Performance Optimization
+  - Get intensive workloads
+    - Use cloudfront
+  - Mixed workloads
+    - Used to have to have a randomized prefix
+      - No longer the case 
