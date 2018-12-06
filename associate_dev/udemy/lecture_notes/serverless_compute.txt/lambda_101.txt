@@ -1,0 +1,35 @@
+Lambda 101
+
+What is lambda
+  - Lambda is a compute service where you can upload code and make a lambda function
+  - AWS takes care of the provisioning and managing of the servers that are used to run you coode
+  - You dont worry about patching, scaling, os, etc
+  - It can act as an event driven compute service where aws lambda runs your code in response to events
+    - eg these events being triggered by changes to data in an S3 bucket or DynamoDB instance
+  - It can be used as a compute service to run your code in response to http requests
+    - For this you use API gateway or api calls from the AWS SDKs
+
+Lambda functions can trigger other lambda functions
+
+Languages supported
+  - node.js
+  - java
+  - python
+  - C#
+  - go
+
+Lambda is priced by number of requests
+  - First 1 million requests are free
+  - After that it is $0.20 per million requests
+  - It is also priced based on duration
+    - Time your code starts to the time it ends rounded to nearest 100ms
+
+Exam tips:
+  Lambda scales out (not up)
+  Lambda functions are independent, 1 event is 1 function
+  Its a compute service (know what services are serverless)
+  It is serverless
+  LFs can trigger other LFs so 1 event can be X functions if triggering a chain
+  Architecture can get complicated, use AWS X-ray to debug whats happening
+  Lambda can do things globally so you can use it to back up s3 buckets to other s3 buckets
+  Know your triggers (remember as many as you can)
