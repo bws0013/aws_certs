@@ -1,0 +1,66 @@
+Api Gateway
+
+An API is an application programming interface
+
+REST API
+  - Representational State Transfer
+  - Typically uses json
+
+SOAP API
+  - Simple Object Access Protocol
+  - Uses XML
+
+API Gateway is a fully managed service
+  - Allows users to publish, maintain, monitor and secure APIs at scale
+  - Acts as a front door for things such as AWS Lambda, EC2 or any web app
+
+API Gateway Functionality
+  - Exposes HTTPS endpoints to define a RESTful api
+  - We can configure how the API responds to those calls
+  - Severless-ly connect to services like lambda and DynamoDB
+  - Send each API endpoint to a different target
+  - Runs efficiently with low cost
+  - Trace and control usage by API key
+  - Throttle requests to prevent attacks
+  - Connect to cloudwatch to log all requests for monitoring
+  - Maintain multiple versions of your api
+
+How to configure API Gateway
+  - Define an api (container)
+  - Define resources and nested resources (url paths)
+  - For each resources
+     - Select supported HTTP methods (verbs)
+     - Set security
+     - Choose target (such as EC2, lambda, DynamoDB)
+     - Set requests and response transformations
+  - Deploy API to a stage
+    - Uses API gateway domain, by default
+    - You can use a custom domain
+    - Supports AWS cert manager: free ssl/tls certs
+
+API caching
+  - Cache your endpoints response
+  - Reduce the number of calls made to your endpoint and also improve latency
+  - Lives for a specified TTL period
+  - API gateway responds to a request by looking up the endpoint response from cache instead of making a request to your endpoint
+  - You can enable this or not
+
+Same-Origin Policy
+  - Browsers permit scripts contained in a first web page to access data in a second page if both have the same origin
+    - This prevents XSS
+  - Enforced by web browsers
+  - Ignored by PostMan and curl
+
+Cross-origin resource sharing (CORS)
+  - A way (on the server end, not client) to relax the same-origin policy
+  - Mechanism that allows restricted resources (eg fonts) on a webpage to be requested from another domain
+  - This domain can be outside the domain from which the first resource was served
+
+Exam tips
+  - Remember what API gateway is at a high level
+  - API gateway has caching capabilities
+  - API gateway is low cost and scales automatically
+  - You can throttle api gateway to prevent attacks
+  - You can log results to cloudwatch
+  - If you are using multiple domains (javascript/ajax) ensure you have cors enabled on API gateway
+  - CORS is enforced by the client
