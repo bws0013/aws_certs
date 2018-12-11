@@ -1,0 +1,17 @@
+Build a simple serverless website
+
+There will probably be an exam question about which isnt a lambda trigger
+The following are:
+  - API Gateway
+  - AWS IoT
+  - Alexa Skills Kit
+  - Alexa Smart Home
+  - Cloudfront
+  - Cloudwatch Events
+  - Cloudwatch Logs
+  - CodeCommit
+  - Congnito Sync Trigger
+  - DynamoDB
+  - Kinesis
+  - S3
+  - SNS 
