@@ -1,0 +1,27 @@
+Version Control With Lambda
+
+With versioning in AWS Lambda you can publish multiple version of your Lambda function
+  - Each lambda function has a unique ARN
+    - After publishing this ARN cannot be changed
+
+Qualified/Unqualified ARNs
+  - Qualified
+    - The function ARN with the version suffix
+    - arn:aws:lambda:aws-region:acct-id:function:helloworld:$LATEST
+  - Unqualified ARN
+    - The function ARN without the version suffix
+    - arn:aws:lambda:aws-region:acct-id:function:helloworld
+
+ARN alias
+  - We can create aliases to point to prod/staging/version 1/version 2/etc
+  - You can change the value of the alias as if it were a variable
+  - This type of aliasing can be used to set up blue/green deploys which aws allows right in the console
+
+Exam Tips
+  - Can have multiple versions of lambda functions
+  - Latest version will use $latest
+  - Qualified versions will use $latest, Unqualified will not have it
+  - Versions are immutable (cannot be changed)
+  - Can split traffic using aliases to different versions
+    - Cannot split traffic with $latest, instead create an alias to latest
+    

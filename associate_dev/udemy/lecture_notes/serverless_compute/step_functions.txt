@@ -1,0 +1,21 @@
+Step Functions
+
+Allow you to visualize and test your serverless applications
+Provide a graphical console to arrange and visualize the components of your application as a series of steps
+Automatically trigger and track each step and retries when there are errors
+Step functions log the state of each step to help with debugging
+
+Step types
+  - Sequential steps
+    - Execute steps in specific order each time
+  - Branching steps
+    - Choice of path
+    - Execute steps based on criteria (filetype, etc)
+  - Parallel steps
+    - eg Insert a photo and resize, do image recognition and extract metadata all at once
+
+Exam tips
+  - Know what step functions are
+    - A great way to visualize your serverless app
+    - Automatically trigger and track each other
+    - Step functions log the state of each step to help with debugging
