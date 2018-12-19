@@ -1,0 +1,47 @@
+X-Ray
+
+Collects data about requests that your application serves
+Provides tools to filter and gain insights into that data
+  - Identify Issues and Optimizations
+
+A way of visualizing your serverless application
+
+For traced requests you can see detailed info
+  - More than just request/response
+  - See calls to downstream resources
+    - Microservices
+    - Databases
+    - Http Web Apis
+
+X-Ray Architecture
+  - XRay SDK sends data to Xray daemon
+  - Xray API sends that data to Xray console
+
+XRay sdk provides
+  - Interceptors to add to your code to trace incoming HTTP requests
+  - Client handlers to instrument AWS SDK clients that your app uses to call other services
+  - An http client to use to instrument calls to other internal and external http web services
+
+Integrates with following services
+  - ELB
+  - Lambda
+  - API gateway
+  - Ec2
+  - Elastic Beanstalk
+
+Xray supported langs
+  - Java
+  - Go
+  - Node.js
+  - Python
+  - Ruby
+  - .Net
+
+Exam Tips
+  - Understand what xray is
+  - Understand what the sdk provides
+    - Interceptors to add to your code to trace incoming HTTP requests
+    - Client handlers to instrument AWS SDK clients that your app uses to call other services
+    - An http client to use to instrument calls to other internal and external http web services
+  - Understand what it integrates with
+  - Know the languages 
