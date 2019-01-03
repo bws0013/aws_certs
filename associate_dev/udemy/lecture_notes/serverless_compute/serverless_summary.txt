@@ -1,0 +1,50 @@
+Serverless summary
+
+Exam tips:
+  - Lambda scales out (not up)
+  - Lambda functions are independent, 1 event is 1 function
+  - Its a compute service (know what services are serverless)
+  - It is serverless
+  - LFs can trigger other LFs so 1 event can be X functions if triggering a chain
+  - Architecture can get complicated, use AWS X-ray to debug whats happening
+  - Lambda can do things globally so you can use it to back up s3 buckets to other s3 buckets
+  - Know your triggers (remember as many as you can)
+
+Exam tips:
+  - Remember what API gateway is at a high level
+  - API gateway has caching capabilities
+  - API gateway is low cost and scales automatically
+  - You can throttle api gateway to prevent attacks
+  - You can log results to cloudwatch
+  - If you are using multiple domains (javascript/ajax) ensure you have cors enabled on API gateway
+  - CORS is enforced by the client
+
+Exam Tips
+  - Can have multiple versions of lambda functions
+  - Latest version will use $latest
+  - Qualified versions will use $latest, Unqualified will not have it
+  - Versions are immutable (cannot be changed)
+  - Can split traffic using aliases to different versions
+    - Cannot split traffic with $latest, instead create an alias to latest
+
+Exam tips
+  - Know what step functions are
+    - A great way to visualize your serverless app
+    - Automatically trigger and track each other
+    - Step functions log the state of each step to help with debugging
+
+Exam Tips
+  - Understand what xray is
+  - Understand what the sdk provides
+    - Interceptors to add to your code to trace incoming HTTP requests
+    - Client handlers to instrument AWS SDK clients that your app uses to call other services
+    - An http client to use to instrument calls to other internal and external http web services
+  - Understand what it integrates with
+  - Know the languages
+
+Exam Tips
+  - API Throttling Limits
+    - 5000 concurrent calls per second across api gateway
+    - 10000 total calls per second across api gateway
+  - You can use api gateway as a soap api passthrough
+  - It supports Swagger v2.0 definition files

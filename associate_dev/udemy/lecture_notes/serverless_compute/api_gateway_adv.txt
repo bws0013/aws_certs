@@ -1,0 +1,20 @@
+Api Gateway Advanced
+
+You can import apis into API gateway using the API Gateway Import feature
+
+It supports Swagger v2.0 definition files
+
+You can overwrite existing apis or combine them
+
+API Throttling Limits
+  5000 concurrent calls per second across api gateway
+  10000 total calls per second across api gateway
+
+You can use api gateway as a soap api passthrough
+
+Exam Tips 
+  - API Throttling Limits
+    - 5000 concurrent calls per second across api gateway
+    - 10000 total calls per second across api gateway
+  - You can use api gateway as a soap api passthrough
+  - It supports Swagger v2.0 definition files
