@@ -1,0 +1,64 @@
+Introduction
+
+What is dynamodb?
+  - Fast and flexible nosql database service
+  - Supports Document and key-value data model
+  - Flexible data model and reliable performance
+  - Serverless
+  - Can autoscale
+  - Integrates well with Lambda
+
+Features
+  - Stored on SSD
+  - Spread across 3 geographically distinct data centers
+  - Choice of 2 consistency models
+    - Eventual consistent reads (default)
+      - consistency across all copies of data is usually reached within a second
+      - Repeating a read after a short time should return the updated value
+      - Best read performance
+    - Strongly consistent reads
+      - Always returns a result that reflects all writes that received a successful response prior to the read
+      - All successful writes will be reflected consistency across all 3 locations
+
+Dynamodb is made of the following
+  - Tables
+  - Items (row of data in a table)
+  - Attributes (column data in a table)
+  - Supports key-value and document data structure
+  - Key -> name, value -> the data itself
+  - Documents can be written in json, html, xml
+
+Primary keys
+  - ddb stores and retrieves data based on the primary key
+  - 2 types of primary key
+    - Partition key - unique attribute (eg user id)
+      - Value of the Partition key is input into an internal hash function which determines the location
+      - If you are using the Partition key as your primary key, then no 2 items can have the same Partition key
+    - Composite key
+      - Partition key + sort key
+      - Use this where the Partition key is no necessarily unique within your table
+      - Primary key could be made of a user id and a timestamp of a post
+      - All items with the same partition key are stored together then sorted according to the sort key value
+      - Allows you to store multiple items with the same partition key
+
+Access control
+  - Auth and access control is managed with IAM
+  - You can create an IAM user within your account who has specific permissions to access/create ddb tables
+  - You can create an IAM role which enables you to obtain temporary access keys which can be used to access dynamodb
+  - You can also use a special iam condition to restrict user access to their own records
+  - A condition can be setup so that a user can only access a partition key matching their user id
+
+Exam tips
+  - Low latency Nosql db
+  - Consists of tables, items and attributes
+  - Supports both document and key-value data models
+  - Supported document formats are json, xml, html
+  - 2 types of primary key
+    - Partition key
+    - Partition key + sort key (composite key)
+  - 2 consistency models
+    - Strongly consistent
+    - Eventual consistency
+  - Access is controlled using iam policies
+  - Fine grained access control using IAM condition param
+    - dynamodb:LeadingKeys allows users to access only items where the parition key matches their user ID 
